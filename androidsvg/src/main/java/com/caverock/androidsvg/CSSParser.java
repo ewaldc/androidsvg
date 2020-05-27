@@ -1166,7 +1166,7 @@ class CSSParser
          if (!scan.empty() && !scan.consume(';'))
             throw new CSSParseException("Invalid @media rule: expected '}' at end of rule set");
 
-         if (SVG.getFileResolver() != null && (!mediaList || mediaMatches(mediaList, deviceMediaType))) {
+         if (SVG.getFileResolver() != null && (mediaList == null || mediaMatches(mediaList, deviceMediaType))) {
             String  css = SVG.getFileResolver().resolveCSSStyleSheet(file);
             if (css == null)
                return;
