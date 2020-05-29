@@ -2422,7 +2422,7 @@ class SVGAndroidRenderer
       int    col;
       if (paint instanceof SVG.Colour) {
          col = ((SVG.Colour) paint).colour;
-      } else if (paint instanceof CurrentColor) {
+      } else if (paint instanceof CurrentColor || paint instanceof PaintReference) {
          col = state.style.color.colour;
       } else {
          return;
